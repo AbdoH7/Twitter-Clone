@@ -27,3 +27,11 @@
    height: 40px;
    margin-top: 10px;
  }
+.bb{
+  width: 25%;
+  height: 60px;
+  
+}
+.borderLine{
+  border-bottom: 1px solid #676F76;
+}
