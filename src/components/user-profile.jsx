@@ -65,8 +65,8 @@ function UserProfile({
           {followerNUM}{" "}
           <h6 className="secFont" style={{ display: "inline-block" }}>
             Followers
-          </h6>
-        </h6>
+          </h6> 
+        </h6> 
         <h6>
           {followingNUM}{" "}
           <h6 className="secFont" style={{ display: "inline-block" }}>
@@ -76,10 +76,10 @@ function UserProfile({
       </div>
 
       <div className="flexSimpleContainer borderLine">
-        <button class="btn btn-outline-light bb border-0 rounded-0">Tweets</button>
-        <button class="btn btn-outline-light bb border-0 rounded-0">Tweets & replies</button>
-        <button class="btn btn-outline-light bb border-0 rounded-0">Media</button>
-        <button class="btn btn-outline-light bb border-0 rounded-0">Likes</button>
+        <button class="btn btn-outline-secondary bb border-0 rounded-0">Tweets</button>
+        <button class="btn btn-outline-secondary bb border-0 rounded-0">Tweets & replies</button>
+        <button class="btn btn-outline-secondary bb border-0 rounded-0">Media</button>
+        <button class="btn btn-outline-secondary bb border-0 rounded-0">Likes</button>
         <hr/>
       </div>
     </div>
