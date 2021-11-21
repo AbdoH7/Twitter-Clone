@@ -1,42 +1,30 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { UserProvider } from "./Contexts/userContext";
 import "./App.css";
 import UserProfile from "./components/user-profile";
-import Ppic from "./1.JPG";
-import Cpic from "./download.png";
+import SideNavbar from "./components/SideNavbar/SideNavbar";
+
 
 function App() {
-  const [user, setUser] = useState({
-    Name: "Abdulrahman Hussein",
-    handle: "AbdulrahmanAH7",
-    tweetsNo: 100,
-    POB: "Alexandria, Egypt",
-    POB_Statue: true,
-    DOB: "February 11, 2000",
-    DOB_Statue: true,
-    DOJ: "October 2013",
-    ProfilePic: Ppic,
-    CoverPic: Cpic,
-    followersNO:300,
-    followingNO: 200
-  });
+
 
   return (
-    <div>
-      <UserProfile
-        name={user.Name}
-        tweetsNumber={user.tweetsNo}
-        handle={user.handle}
-        POB={user.POB}
-        POB_S={user.POB_Statue}
-        DOB={user.DOB}
-        DOB_S={user.DOB_Statue}
-        DOJ={user.DOJ}
-        profilePic={user.ProfilePic}
-        coverPic={user.CoverPic}
-        followerNUM={user.followersNO}
-        followingNUM={user.followingNO}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+
+        <UserProvider>
+           <SideNavbar /> 
+          <Routes>
+            <Route path="/profile" element={<UserProfile/>}/>
+              
+          </Routes>
+          <rightside>
+            right here
+          </rightside>
+        </UserProvider>
+      </div>
+    </BrowserRouter>
   );
 }
 

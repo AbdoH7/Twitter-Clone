@@ -1,9 +1,19 @@
 
+* {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+.App{
+  font-family: 'segoe UI', 'Times New Roman', Times, serif;
+  display: grid;
+  grid-template-columns: 1.1fr 2.1fr 1.4fr ;
+  color: #fff;
+}
 .main_container {
   display: block;
   width: 600px;
   height: 100vh;
-  background-color: black;
   margin: auto;
   color: white;
 }
