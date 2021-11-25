@@ -15,14 +15,14 @@ function App() {
       <div className="App">
 
         <UserProvider>
-          <div style={{width:"300px"}}> <SideNavbar  /> </div>
+          <div style={{width:"450px"}}> <SideNavbar  /> </div>
            
           <Routes>
             <Route path="/profile" element={<UserProfile/>}/>
             <Route path="/profile/tweetblock" element={<TweetBlock/>}/>
               
           </Routes>
-          <rightside>
+          <rightside style={{zIndex:"9", width:"650px"}}>
           </rightside>
         </UserProvider>
       </div>
