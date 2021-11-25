@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserProvider } from "./Contexts/userContext";
 import "./App.css";
 import UserProfile from "./components/user-profile";
-import SideNavbar from "./components/SideNavbar/SideNavbar";
+import SideNavbar from "./components/SideNavbar";
+import TweetBlock from "./components/tweet-block";
 
 
 function App() {
@@ -14,13 +15,14 @@ function App() {
       <div className="App">
 
         <UserProvider>
-           <SideNavbar /> 
+          <div style={{width:"300px"}}> <SideNavbar  /> </div>
+           
           <Routes>
             <Route path="/profile" element={<UserProfile/>}/>
+            <Route path="/profile/tweetblock" element={<TweetBlock/>}/>
               
           </Routes>
           <rightside>
-            right here
           </rightside>
         </UserProvider>
       </div>
