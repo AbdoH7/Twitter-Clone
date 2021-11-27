@@ -1,13 +1,16 @@
-
 * {
-  background-color: black;
+  background-color: #15202B;
   margin: 0;
   padding: 0;
 }
-.App{
-  font-family: 'segoe UI', 'Times New Roman', Times, serif;
+a{
+  text-decoration:none;
+  color:#676f76;
+}
+.App {
+  font-family: "segoe UI", "Times New Roman", Times, serif;
   display: grid;
-  grid-template-columns: 1.1fr 2.1fr 1.4fr ;
+  grid-template-columns: 1.1fr 2.1fr 1.4fr;
   color: #fff;
 }
 .main_container {
@@ -17,43 +20,45 @@
   margin: auto;
   color: white;
 }
-.flexSimpleContainer{
+.flexSimpleContainer {
   display: flex;
   justify-content: space-between;
 }
- 
- .secFont{
-   color:#676F76 ;
- }
- .profilePic{
-   margin-top: -75px;
-   width: 150px;
-   height: 150px;
-   border-radius: 75px;
-   border: 2px solid black; 
- }
- .btn_{
-   width: 115px;
-   height: 40px;
-   margin-top: 10px;
- }
-.bb{
+
+.secFont {
+  color: #676f76;
+}
+.profilePic {
+  margin-top: -75px;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  border: 2px solid black;
+}
+.btn_ {
+  width: 115px;
+  height: 40px;
+  margin-top: 10px;
+}
+.btnFollower {
+  width: 115px;
+  height: 40px;
+  color: White;
+  /* text-align: center;
+  font-size: 500px; */
+}
+
+.bb {
   width: 25%;
   height: 60px;
-  
 }
 
-.borderLine{
-  border-bottom: 1px solid #676F76;
+.borderLine {
+  border-bottom: 1px solid #676f76;
 }
 
-
-
-
-
-
-
-::before, ::after {
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -63,40 +68,19 @@ body {
   background: #fff;
 }
 
-/* .container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 500px;
-  height: 300px;
-  background: #f1f1f1;
-  margin: 100px auto 0;
-  word-break: break-all;
-  border: 1px solid rgba(0, 0, 0, 0.274);
-} */
-
 .bloc-tabs {
   display: flex;
 }
 .tabs {
-
-  /* padding: 15px; */
   text-align: center;
   width: 50%;
   background: rgba(238, 234, 234, 0.075);
   cursor: pointer;
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.274); */
-  /* box-sizing: content-box;*/
-  position: relative; 
+  position: relative;
   outline: none;
 }
-.tabs:not(:last-child){
+.tabs:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.274);
-}
-
-.active-tabs  {
-  /* background: white; */
-  /* border-bottom: 1px solid transparent; */
 }
 
 .active-tabs::before {
@@ -111,14 +95,11 @@ body {
   background: rgb(88, 147, 241);
 }
 
-
-
 button {
   border: none;
-  
 }
 .content-tabs {
-  flex-grow : 1;
+  flex-grow: 1;
 }
 .content {
   /* background: white; */
@@ -142,4 +123,23 @@ button {
 }
 .active-content {
   display: block;
+}
+
+.followerProfilePic {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 75px;
+}
+
+.followsyou {
+  background-color: "#202327";
+  color: "#535A5F";
+  width: "80px";
+  height: "20px";
+  display: "inline-block";
+  font-size: "14px";
+  margin: "0 0 0 5px";
+  text-align: "center";
+  border-radius: "8px";
 }

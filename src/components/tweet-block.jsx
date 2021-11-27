@@ -10,11 +10,11 @@ function TweetBlock({ }) {
     const [retweet, setRetweet] = useState(false);
     const [more, setMore] = useState(false);
     const isLiked = () => {
-        if (like == 0) setLike(true);
+        if (!like) setLike(true);
         else setLike(false);
     }
     const isRetweeted = () => {
-        if (retweet == 0) setRetweet(true);
+        if (!retweet) setRetweet(true);
         else setRetweet(false);
     }
     const reply = () => {
@@ -31,7 +31,7 @@ function TweetBlock({ }) {
     }
 
     return (
-        <div style={{ width: "90%", margin: "auto" }}>
+        <div style={{ width: "100%", margin: "auto",marginBottom:"0", border:"1px solid #676F76"}}>
 
             <div style={{ display: "flex", marginTop: "10px" }}>
                 <img src={profile.ProfilePic} className="rounded-circle" style={{ width: "53px", height: "53px", margin: "5px" }} />

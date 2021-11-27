@@ -5,6 +5,8 @@ import "./App.css";
 import UserProfile from "./components/user-profile";
 import SideNavbar from "./components/SideNavbar";
 import TweetBlock from "./components/tweet-block";
+import Followers from "./components/followers";
+import Following from "./components/following";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Routes>
             <Route path="/profile" element={<UserProfile/>}/>
             <Route path="/profile/tweetblock" element={<TweetBlock/>}/>
+            <Route path="/profile/followers" element={<Followers/>}/>
+            <Route path="/profile/following" element={<Following/>}/>
               
           </Routes>
           <rightside style={{zIndex:"9", width:"650px"}}>

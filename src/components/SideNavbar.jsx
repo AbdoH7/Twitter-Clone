@@ -8,7 +8,7 @@ function SideNavbar ({}) {
 
   const[aaaah, setProfile] = useContext(UserContext);
   return (
-    <div className="left-pane" style={{width:"300px"}}>
+    <div className="left-pane" style={{width:"450px",zIndex:"12", backgroundColor:"#15202B"}}>
       <div className="container">
         <header>{twitter}</header>
 
@@ -61,29 +61,3 @@ function SideNavbar ({}) {
 
 export default SideNavbar
 
-
-// function SideNavbar(){
-//     const [profile, setProfile] = useContext(UserContext);
-
-//     return(
-//         <div className="sidenav">
-//             <div className="navContainer">
-//                 <header>Twitter Icon</header>
-//                 <nav style={{textDecoration:"none"}}>
-//                     <NavLink to="/home">Home</NavLink>
-//                     <NavLink to="/explore">Explore</NavLink>
-//                     <NavLink to="/notifications">Notifications</NavLink>
-//                     <NavLink to="/messages">Messages</NavLink>
-//                     <NavLink to="/bookmarks">Bookmarks</NavLink>
-//                     <NavLink to="/lists">Lists</NavLink>
-//                     <NavLink to="/profile">Profile</NavLink>
-                    
-//                 </nav>
-//                 <button className="tweet_btn">Tweet</button>
-//             </div>
-
-//         </div>
-//     )
-
-// }
-// export default SideNavbar;
