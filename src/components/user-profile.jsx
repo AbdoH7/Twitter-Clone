@@ -27,7 +27,7 @@ function UserProfile({}) {
         <img src={profile.CoverPic} style={{ width: "100%" }} />
         <div className="container flexSimpleContainer">
           <img src={profile.ProfilePic} className="profilePic" />
-          <button className="btn btn-outline-light rounded-pill btn_">
+          <button class="btn btn-outline-light rounded-pill btn_">
             Edit Profile
           </button>
         </div>

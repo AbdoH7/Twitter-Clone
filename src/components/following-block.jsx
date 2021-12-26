@@ -31,7 +31,7 @@ function FollowingBlock() {
                     <h6 style={{ margin: "0" }}>{profile.Name}</h6>
                     <div>
                         <h6 className="secFont" style={{display:"inline-block"}}>@{profile.handle}</h6>
-                        <h6 style={{backgroundColor:"#253341", color:"#8899A6", width:"80px", height:"20px", display:"inline-block", fontSize: "14px", margin:"0 0 0 5px",textAlign:"center", borderRadius:"6px"}}>Follows you</h6>
+                        <h6 className="followsyou">Follows you</h6>
                     </div>
                     
                 </div>

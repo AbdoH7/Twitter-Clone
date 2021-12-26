@@ -38,7 +38,7 @@ function TweetBlock({ }) {
                 <h6 style={{ margin: "5px", fontWeight: "bolder" }}>{profile.Name}</h6>
                 <h6 style={{ marginTop: "5px", color: "gray" }}>@{profile.handle}</h6>
                 <h6 style={{ marginLeft: "15px", marginTop: "5px", color: "gray" }}>Nov 25, 2021</h6>
-                <button style={{border:"none"}} onClick={moreClicked}> <BsThreeDots style={{ marginLeft: "20px", marginTop: "5px", color:"white" }}></BsThreeDots> </button>
+                <button style={{border:"none",height:"16px",width:"16px"}} onClick={moreClicked}> <BsThreeDots style={{ marginLeft:"50px", color:"white" }}></BsThreeDots> </button>
                 
 
             </div>

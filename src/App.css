@@ -133,13 +133,13 @@ button {
 }
 
 .followsyou {
-  background-color: "#202327";
-  color: "#535A5F";
-  width: "80px";
-  height: "20px";
-  display: "inline-block";
-  font-size: "14px";
-  margin: "0 0 0 5px";
-  text-align: "center";
-  border-radius: "8px";
+  background-color: #253341;
+  color: #8899A6;
+  width: 80px;
+  height: 20px;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 0 0 5px;
+  text-align: center;
+  border-radius: 8px;
 }
