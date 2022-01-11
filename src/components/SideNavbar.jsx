@@ -8,7 +8,7 @@ function SideNavbar ({}) {
 
   const[aaaah, setProfile] = useContext(UserContext);
   return (
-    <div className="left-pane" style={{width:"450px",zIndex:"7", backgroundColor:"#15202B"}}>
+    <div className="left-pane" style={{ backgroundColor:"#15202B"}}>
       <div className="container">
         <header>{twitter}</header>
 

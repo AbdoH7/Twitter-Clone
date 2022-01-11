@@ -8,11 +8,15 @@ import { NavLink } from 'react-router-dom';
 function UserProfile({}) {
   const [profile, setProfile] = useContext(UserContext);
   const [toggleState, setToggleState] = useState(1);
+  const tweet = [{ id: 1, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "just setting up my twitter", date: "Nov 25, 2021" },
+  { id: 2, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "welcome everyone", date: "Nov 25, 2021" }]
   const toggleTab = (index) => {
     setToggleState(index);
   };
   return (
-    <div className="main_container" style={{ zIndex: "10" }}>
+    <div
+    //  className="main_container"
+     style={{ zIndex: "10" }}>
       <div style={{ border: "1px solid #676F76" }}>
         <AiOutlineArrowLeft
           style={{ width: "75px", fontSize: "20px", marginTop: "20px" }}
@@ -131,8 +135,10 @@ function UserProfile({}) {
           style={{ width: "100%" }}
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          <TweetBlock />
-          <TweetBlock />
+          
+          {tweet.map((t)=>(<TweetBlock tweet={t}/>))}
+          
+          
         </div>
         <h1
           className={toggleState === 2 ? "content  active-content" : "content"}

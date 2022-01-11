@@ -47,7 +47,7 @@
   background: unset;
   border: unset;
 }
-.left-pane button.tweet {
+.left-pane  button.tweet {
   display: block;
   background: #1da1f2;
   color: #fff;

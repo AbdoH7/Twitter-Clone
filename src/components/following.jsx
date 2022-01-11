@@ -10,7 +10,7 @@ function Followers() {
   const followsMe = true;
   return (
     <div
-      className="main_container"
+      // className="main_container"
       style={{ zIndex: "9", border: "1px solid #676F76" }}
     >
       <div style={{ borderBottom: "1px solid #676F76", marginBottom: "10px" }}>

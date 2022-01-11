@@ -7,9 +7,10 @@ import SideNavbar from "./components/SideNavbar";
 import TweetBlock from "./components/tweet-block";
 import Followers from "./components/followers";
 import Following from "./components/following";
+import ExpandedTweet from "./components/expandedTweet";
 
 
-function App() {
+function App(props) {
 
 
   return (
@@ -17,17 +18,21 @@ function App() {
       <div className="App">
 
         <UserProvider>
-          <div style={{width:"450px"}}> <SideNavbar  /> </div>
-           
-          <Routes>
-            <Route path="/profile" element={<UserProfile/>}/>
-            <Route path="/profile/tweetblock" element={<TweetBlock/>}/>
-            <Route path="/profile/followers" element={<Followers/>}/>
-            <Route path="/profile/following" element={<Following/>}/>
+          <div style={{ width: "400px" }}> <SideNavbar /> </div>
+
+          <div style={{ width: "625x", zIndex: "9" }}>
+            <Routes>
+              <Route exact path="/tweet/:id" element={<ExpandedTweet />}/>
               
-          </Routes>
-          <rightside style={{zIndex:"9", width:"650px"}}>
-          </rightside>
+              <Route exact path="/profile" element={<UserProfile />} />
+              <Route exact path="/profile/tweetblock" element={<TweetBlock />} />
+              <Route exact path="/profile/followers" element={<Followers />} />
+              <Route exact path="/profile/following" element={<Following />} />
+
+            </Routes>
+          </div>
+
+          <rightside style={{ zIndex: "9", width: "497px" }} />
         </UserProvider>
       </div>
     </BrowserRouter>
