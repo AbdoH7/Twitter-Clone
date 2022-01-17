@@ -8,7 +8,7 @@ import TweetBlock from "./components/tweet-block";
 import Followers from "./components/followers";
 import Following from "./components/following";
 import ExpandedTweet from "./components/expandedTweet";
-import SignInUp from './components/signInUp'
+import SignInUp from "./components/signInUp";
 
 function App(props) {
 
