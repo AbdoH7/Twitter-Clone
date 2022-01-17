@@ -1,23 +1,37 @@
+$gray-tone : rgb(56, 68, 77);
+$gray-text: #9ca7b0;
+
 p{
     margin: 0 !important;
     padding: 0 !important;
 }
-.tweet-wrapper{
+
+//MARK: -Top Tweet wrapper 
+.tweet-wrapper {
     width: 100%;
     padding: 16px 20px;
+    padding-bottom: 8px;
+    border-left: 0.1px solid $gray-tone;
+    border-right: 0.1px solid $gray-tone;
 
-    .tweet-content{
-        .tweet-header{
+    .title-view{
+        font-size: 17pt;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .tweet-content {
+        .tweet-header {
             height: 52px;
             overflow: hidden;
             
-            .tweet-user-info{
+            .tweet-user-info {
                 float: left;
                 width: 90%;
 
-                .avatar{
+                .avatar {
                     float: left;
-                    background-color: cyan;
+                    background-color: rgb(255, 196, 0);
                     width: 52px;
                     height: 52px;
                     border-radius: 26px;
@@ -28,48 +42,93 @@ p{
                     background-image: url("../../1.JPG");
                 }
 
-                .user-info{
+                .user-info {
                     float: left;
                     width: calc(100% - 52px - 16px);
                     margin-left: 16px;
                    
-
-                    p.user-name{
-                        font-size: 14px;
-                        font-weight: 400;
-                        color: #a7a7a7;
+                    p.name {
+                        font-size: 15px;
+                        font-weight: bold;
                     }
+
+                    p.user-name {
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: $gray-text;
+                    }
+                }
+            }
+
+            .tweet-actions-toggle {
+                float: right;
+
+                button {
+                    color: white !important;
+                    padding: 8px;
                 }
             }
         }
 
+
         
-        .tweet-body{
+        .tweet-body {
             padding-top: 16px;
             padding-bottom: 8px;
+            font-size: 17px;
+            font-weight: bold;
         }
 
 
-        .tweet-info{
+        .tweet-info {
             padding: 8px 0px;
             padding-bottom: 16px;
-            border-bottom: 0.1px solid #a7a7a7;
+            border-bottom: 0.1px solid $gray-tone;
             font-size: 14px;
             font-weight: 400;
-            color: #a7a7a7;
+            color: $gray-text
         }
 
     }
 
 
 
-    .tweet-statistics{
+    .tweet-statistics {
         padding: 12px 0px;
-        border-bottom: 0.1px solid #a7a7a7;
+        border-bottom: 0.1px solid $gray-tone;
 
         .tweet-likes{
             margin-left: 24px;
         }
     }
 
+
+    .tweet-controls {
+        // text-align: center;
+        display: flex;
+        direction: row;
+        justify-content: space-between;
+        padding: 0px 12px;
+        // border-bottom: 0.1px solid $gray-tone;
+
+        button {
+            padding: 8px;
+            color: rgb(221, 221, 221);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+
+    }
+}
+
+
+//#MARK: Replieis Container....
+
+.replies-container{
+    border-left: 0.1px solid $gray-tone;
+    border-right: 0.1px solid $gray-tone;
+    border-top: 0.1px solid $gray-tone;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
 }

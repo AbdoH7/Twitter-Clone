@@ -1,9 +1,11 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../Contexts/userContext";
-import { BsReply, BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsBookmark } from "react-icons/bs";
 import { AiOutlineRetweet, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiShare } from "react-icons/fi";
 import { SiSimpleanalytics } from "react-icons/si";
+import { BiMessageRounded } from "react-icons/bi";
+
 import AddComment from './addComment';
 import Popup from "reactjs-popup";
 import { useNavigate } from 'react-router-dom';
@@ -53,7 +55,7 @@ function TweetBlock(props) {
 
     return (
         
-        <div style={{ width: "100%", margin: "auto", marginBottom: "0", border: "1px solid #676F76" }} onClick={expandTweet}>
+        <div style={{ width: "100%", margin: "auto", marginBottom: "0"}} onClick={expandTweet}>
 
 
             <div style={{ display: "flex", marginTop: "10px" }} >
@@ -66,15 +68,15 @@ function TweetBlock(props) {
 
             </div>
             <div style={{ marginLeft: "70px", marginTop: "-30px" }}>
-                <p style={{ height: "65px" }}>{props.tweet.content}</p>
+                <p style={{ /* height: "65px" */ }}>{props.tweet.content}</p>
 
             </div>
-            <div id="buttons" style={{ display: " flex", justifyContent: "space-around", marginBottom: "20px" }}>
+            <div id="buttons" style={{ display: " flex", justifyContent: "space-around", paddingBottom: "16px", marginTop: "16px", borderBottom: "0.1px solid rgb(56, 68, 77)"}}>
 
 
                 <Popup
                     
-                    trigger={<button style={{ border: "none" }} onClick={reply}><BsReply style={{ color: "white"}} /> </button>}
+                    trigger={<button style={{ border: "none" }} onClick={reply}><BiMessageRounded style={{ color: "white"}} /> </button>}
                     modal
                     contentStyle={{width:"600px", margin:"auto"}}
                     
@@ -86,11 +88,11 @@ function TweetBlock(props) {
                 <button style={{ border: "none" }} onClick={isRetweeted}>{retweet ? <AiOutlineRetweet style={{ color: "green" }} /> : <AiOutlineRetweet style={{ color: "white" }} />}</button>
                 <button style={{ border: "none" }} onClick={isLiked}>{like ? <AiFillHeart style={{ color: "#F91880" }} /> : <AiOutlineHeart style={{ color: "white" }} />}</button>
                 <button style={{ border: "none" }} onClick={share}><FiShare style={{ color: "white" }} /></button>
-                <button style={{ border: "none" }} onClick={analytics}><SiSimpleanalytics style={{ color: "white" }} /></button>
+                <button style={{ border: "none" }} onClick={analytics}><BsBookmark style={{ color: "white" }} /></button>
 
 
             </div>
-            <hr style={{ color: "gray" }} />
+            {/* <hr style={{ color: "gray" }} /> */}
             {/* {addReply ? <AddComment setReply={setAddReply} tweet={tweet} /> : console.log("hi")} */}
         </div>
     );
