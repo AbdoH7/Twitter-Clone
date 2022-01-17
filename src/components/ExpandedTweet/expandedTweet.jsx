@@ -5,13 +5,9 @@ import { BiMessageRounded } from "react-icons/bi";
 import { AiOutlineRetweet, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiShare } from "react-icons/fi";
 import { SiSimpleanalytics } from "react-icons/si";
-<<<<<<< Updated upstream:src/components/expandedTweet.jsx
-import Ppic from "../1.JPG";
-=======
-import Ppic from "../../Images/1.JPG";
+import Ppic from "../../1.JPG";
 import TweetBlock from '../tweet-block';
 import './expandedTweet.scss'
->>>>>>> Stashed changes:src/components/ExpandedTweet/expandedTweet.jsx
 
 
 

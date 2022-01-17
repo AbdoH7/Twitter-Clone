@@ -8,13 +8,10 @@ import TweetBlock from "./components/tweet-block";
 import Followers from "./components/followers";
 import Following from "./components/following";
 import ExpandedTweet from "./components/ExpandedTweet/expandedTweet";
-import SignInUp from "./components/signInUp";
-<<<<<<< Updated upstream
-=======
-import NewloginPage from "./components/NewloginPage";
+//import SignInUp from "./components/signInUp";
+//import NewloginPage from "./components/NewloginPage";
 import { getAuth } from 'firebase/auth';
 import Home from "./components/home";
->>>>>>> Stashed changes
 
 function App(props) {
 
@@ -22,26 +19,13 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className="App">
-<<<<<<< Updated upstream
-        <SignInUp/>
-        {/* <UserProvider>
-          <div style={{ width: "400px" }}> <SideNavbar /> </div>
+        {/* <SignInUp/> */}
+        <UserProvider>
+          <div style={{ width: "400px" }}> <SideNavbar style={{overflow:"hidden"}} /> </div>
 
-          <div style={{ width: "625x", zIndex: "9" }}>
+          <div style={{ width: "600px",overflow:"hidden", zIndex: "9" }}>
             <Routes>
               <Route exact path="/tweet/:id" element={<ExpandedTweet />}/>
-=======
-        
-        
-          {/* <SignInUp/> */}
-         <UserProvider>
-           <div style={{ width: "400px" }}> <SideNavbar /> </div>
-
-           <div style={{ width: "625x", zIndex: "9" }}>
-             <Routes>
-               <Route exact path="/tweet/:id" element={<ExpandedTweet />}/>
-               <Route exact path="/home" element={<Home />}/>
->>>>>>> Stashed changes
               
               <Route exact path="/profile" element={<UserProfile />} />
               <Route exact path="/profile/tweetblock" element={<TweetBlock />} />
@@ -51,13 +35,8 @@ function App(props) {
             </Routes>
           </div>
 
-<<<<<<< Updated upstream
-          <rightside style={{ zIndex: "9", width: "497px" }} />
-        </UserProvider> */}
-=======
-           <rightside style={{ zIndex: "9", width: "497px" }} />
-         </UserProvider>
->>>>>>> Stashed changes
+          <rightside style={{ zIndex: "9", width: "519px" }} />
+        </UserProvider>
       </div>
     </BrowserRouter>
   );
