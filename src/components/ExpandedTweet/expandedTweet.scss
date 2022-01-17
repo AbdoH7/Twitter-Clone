@@ -1,0 +1,75 @@
+p{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.tweet-wrapper{
+    width: 100%;
+    padding: 16px 20px;
+
+    .tweet-content{
+        .tweet-header{
+            height: 52px;
+            overflow: hidden;
+            
+            .tweet-user-info{
+                float: left;
+                width: 90%;
+
+                .avatar{
+                    float: left;
+                    background-color: cyan;
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 26px;
+                    overflow: hidden;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-image: url("../../Images/1.JPG");
+                }
+
+                .user-info{
+                    float: left;
+                    width: calc(100% - 52px - 16px);
+                    margin-left: 16px;
+                   
+
+                    p.user-name{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #a7a7a7;
+                    }
+                }
+            }
+        }
+
+        
+        .tweet-body{
+            padding-top: 16px;
+            padding-bottom: 8px;
+        }
+
+
+        .tweet-info{
+            padding: 8px 0px;
+            padding-bottom: 16px;
+            border-bottom: 0.1px solid #a7a7a7;
+            font-size: 14px;
+            font-weight: 400;
+            color: #a7a7a7;
+        }
+
+    }
+
+
+
+    .tweet-statistics{
+        padding: 12px 0px;
+        border-bottom: 0.1px solid #a7a7a7;
+
+        .tweet-likes{
+            margin-left: 24px;
+        }
+    }
+
+}

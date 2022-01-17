@@ -67,6 +67,7 @@ const SignUpForm = () => {
                 'Content-Type': 'multipart/form-data',
               }
             return axios.post('/user',body,{headers})
+
         })
         .then((response)=> {
             //render to home or profile

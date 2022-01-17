@@ -1,10 +1,16 @@
 import React from 'react'
-import axios from 'axios'
+
+import { BsTwitter } from "react-icons/bs";
+
+//import axios from 'axios'
+const axios = require('axios').default
+axios.defaults.baseURL = 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App';
+axios.defaults.headers['Access-Control-Allow-Origin'] = null
 
 
-const api = axios.create({
-    baseURL: 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App'
-})
+// const api = axios.create({
+//     baseURL: 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App'
+// })
 //import { MediaType } from './mediaType'
 
 export default function Home() {
@@ -40,120 +46,58 @@ export default function Home() {
 
 
     var bodyFormData = new FormData()
-    bodyFormData.append('text', 'string123')
+    bodyFormData.append('text', 'hi there')
     bodyFormData.append('userId', 'string')
-    bodyFormData.append('hasMedia', false)
-    bodyFormData.append('mediaType',4)
-    bodyFormData.append('hasMention',false)
-    bodyFormData.append('location','string')
-    bodyFormData.append('timeStamp',10)
+    // bodyFormData.append('hasMedia', false)
+    bodyFormData.append('mediaType', 4)
+    bodyFormData.append('hasMention', false)
+    bodyFormData.append('location', 'string')
+    bodyFormData.append('timestamp', new Date().toUTCString())
+
+
     const user = {
         email: "haha@haha.com",
         username: "haha",
         birthdate: "11-2-2000"
     }
-    // const composeTweet = async () => {
-    //     const res = await fetch('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/tweets', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             //'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(tweet)
-    //     })
-    //     const data = await res.json();
-    //     console.log("doneeee")
-    //     console.log(data)
-
-
-    // }
+  
 
 
 
-
-    // const composeTweet = () => {
-    //     fetch('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/tweets', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'multipart/form-data',
-    //         },
-    //         body: JSON.stringify(tweet)
+  
 
 
-    //     })
-    // .then(response => response.json())
-    // .then(data => {
-    //   console.log('Success:', data);
-    // })
-    // .catch((error) => {
-    //   console.error('Error:', error);
-    // });
-
-
-    //}
+    //   api.get('/tweets').then(res=>{
+    //       console.log(res.data)
+    //    })
 
 
 
 
 
+    
 
 
-    //const composeTweet =() =>{
-    //     api.get('/tweets').then(res=>{
-    //         console.log(res.data)
-    //     })
-    // }
+    const composeTweet = () => {
+        
 
-    // const composeTweet = async () => {
-    //     const res = await api.post('/tweets',tweet)
-    // const data = await res.json();
-    //     console.log("doneeee")
-    //     console.log(data)
-    // }
+        axios.post('/tweets', bodyFormData, {
+            'Content-Type': 'multipart/form-data',
+        }).then(function (res){
+                console.log(res.data)
+            }).catch(function name(err) {
+                console.log(err)            
+            })
 
-      const composeTweet = () =>{
-    // axios.post('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/user', user)
-    //   .then(function (response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+}
 
-
-
-
-
-        api.get('/tweets').then(res=>{
-             console.log(res.data)
-         })
-
-
-
-
-
-    // axios.post( 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/tweets', tweet )
-    }
-
-
-
-    // const composeTweet = () => {
-    //     axios({
-    //         method: "post",
-    //         url: 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/tweets',
-    //         data: bodyFormData,
-    //         headers:{"Content-Type": "multipart/form-data"}
-    //     }).then(function (res){
-    //         console.log(res)
-    //     }).catch(function name(err) {
-    //         console.log(err)            
-    //     })
-    // }
-
-    return (
-        <div>
-            <button onClick={composeTweet} onBlur={composeTweet}>click me</button>
-        </div>
-    )
+return (
+    <div>
+        
+        <BsTwitter style={{color:"#1da1f2",width:"50px",height:"50px"}}/>
+        
+        <button className='btn btn-outline-light rounded-pill
+' onClick={composeTweet} onBlur={composeTweet}>click me</button>
+    </div>
+)
 }

@@ -74,8 +74,7 @@ function TweetBlock(props) {
 
                 <Popup
                     
-                    trigger={<button style={{ border: "none" }} onClick={reply}><BsReply style={{ color: "white"}} /> </button>
-                    }
+                    trigger={<button style={{ border: "none" }} onClick={reply}><BsReply style={{ color: "white"}} /> </button>}
                     modal
                     contentStyle={{width:"600px", margin:"auto"}}
                     

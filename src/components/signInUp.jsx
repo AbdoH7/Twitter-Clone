@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 
 
-const SignInUp = () => {
+const SignInUp = (z) => {
     const renderSignUp = () => {
         setLogin(false)
     }
