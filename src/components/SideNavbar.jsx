@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../Contexts/userContext";
-import './SideNavbar.css'
+import '../styles/SideNavbar.css'
 import { NavLink } from 'react-router-dom'
-import { home, explore, twitter, notifications, messages, bookmarks, lists, profile, more } from './icons'
+import { home, explore, twitter, notifications, messages, bookmarks, lists, profile, more } from '../scripts/icons'
 
 function SideNavbar ({}) {
 

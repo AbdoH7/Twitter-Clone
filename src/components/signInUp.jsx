@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../SignInStyle.css'
+import '../styles/SignInStyle.css'
 import SignInForm from './signInForm';
 import SignUpForm from './signUpForm';
 import { useState } from 'react';
@@ -47,7 +47,10 @@ const style = {
     alignItems: 'center',
     width:"100vw",
     height:"100vh",
-    backgroundColor:"#15202B"
+    backgroundColor:"#15202B",
+    color: "black",
+    backgroundColor: "white",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
 }
 
 const containerStyle = {

@@ -1,0 +1,41 @@
+
+
+
+.page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    
+}
+.page * {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    color: black;
+    background-color: white;
+}
+
+
+.page > * {
+    width: 60vw;
+    height: 100%;
+}
+
+
+.portal {
+    margin: auto;
+    padding-bottom: 50%;
+    width: 40vw;
+    background-color: white;
+}
+.portal > * {
+    margin-left: 5%;
+    margin-bottom: 3%;
+
+}
+
+.gBtn{
+
+    font-weight: normal;
+
+}
+

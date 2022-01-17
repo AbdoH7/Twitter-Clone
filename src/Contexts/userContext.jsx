@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
-import Ppic from "../1.JPG";
-import Cpic from "../download.png";
+import Ppic from "../Images/1.JPG";
+import Cpic from "../Images/download.png";
 import UserProfile from './../components/user-profile';
 
 
