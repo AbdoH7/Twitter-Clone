@@ -18,7 +18,7 @@ function TweetBlock(props) {
     let navigate = useNavigate();
     const expandTweet = (e) => {
         console.log(e.target.tagName)
-        if(e.target.tagName!="svg"){
+        if(e.target.tagName!="svg"&&e.target.tagName!="path"){
         // window.history.pushState("", "", "/tweet/"+props.tweet.id)
         navigate(`/tweet/${props.tweet.id}`,{state:{
             id:props.tweet.id
@@ -69,7 +69,7 @@ function TweetBlock(props) {
                 <p style={{ height: "65px" }}>{props.tweet.content}</p>
 
             </div>
-            <div style={{ display: " flex", justifyContent: "space-around", marginBottom: "20px" }}>
+            <div id="buttons" style={{ display: " flex", justifyContent: "space-around", marginBottom: "20px" }}>
 
 
                 <Popup
