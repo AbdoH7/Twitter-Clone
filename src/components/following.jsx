@@ -4,7 +4,7 @@ import { UserContext } from "../Contexts/userContext";
 import FollowingBlock from "./following-block";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import "./SideNavbar.css";
+import "../styles/SideNavbar.css";
 function Followers() {
   const [profile, setProfile] = useContext(UserContext);
   const followsMe = true;

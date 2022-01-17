@@ -1,0 +1,44 @@
+
+
+.col {
+    padding: 0;
+}
+
+#btn{
+    background-color: white;
+    color:lightgrey;
+    font-size: x-large;
+    padding: 0;
+}
+#btn:hover{
+    color:black
+}
+
+#twitterBtn {
+    background-color: black;
+    color: white;
+    width: 40%;
+    
+}
+#twitterBtn:Hover {
+    color: black;
+    background-color: white;
+    border: 1px;
+}
+#icon{
+    margin-top: 25%;
+}
+
+#sign {
+    background-color: black;
+    color: white;
+    width: 40%;
+    
+    padding: 2%;
+}
+
+#sign:Hover {
+    color: black;
+    background-color: white;
+    border: 1px;
+}

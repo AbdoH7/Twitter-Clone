@@ -1,5 +1,5 @@
 import React from 'react'
-import Ppic from "../1.JPG";
+import Ppic from "../Images/1.JPG";
 
 
 export default function AddComment(props) {
