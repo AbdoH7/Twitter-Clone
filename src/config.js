@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-
-
+const axios = require('axios').default
+axios.defaults.baseURL = 'http://localhost:5001/twitterclonewebengineering/us-central1/App';
+axios.defaults.headers['Access-Control-Allow-Origin'] = null
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,4 +17,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+
 
