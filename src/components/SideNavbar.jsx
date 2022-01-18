@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom'
 import { home, explore, twitter, notifications, messages, bookmarks, lists, profile, more } from '../scripts/icons'
 import { getAuth, signOut } from "firebase/auth";
 import {MdLogout} from 'react-icons/md'
-import { width } from "@mui/system";
 import Popup from "reactjs-popup";
 
 import ComposeTweet from './composeTweet';
