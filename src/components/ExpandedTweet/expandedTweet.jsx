@@ -28,8 +28,9 @@ export default function ExpandedTweet() {
     return (
         <div>
             
-            <h4>Tweet</h4>
+            
             <div className='tweet-wrapper'>
+                <h4 className="title-view">Tweet</h4>
                 <div className="tweet-content">
                     <div className="tweet-header">
                         <div className="tweet-user-info">
@@ -39,7 +40,7 @@ export default function ExpandedTweet() {
                                 <p className="user-name">@yourfavBuZzLightYear</p>
                             </div>
                         </div>
-                        <div className="tweet-actions-toggle"><BsThreeDots/></div>
+                        <div className="tweet-actions-toggle"><button><BsThreeDots/></button></div>
                     </div>
                     <div className="tweet-body">
                         <p>Some Tweet Content by some user.......</p>
@@ -48,15 +49,15 @@ export default function ExpandedTweet() {
                 </div>
                 <div className="tweet-statistics">
                     <div className="retweets-statistics">
-                        <span >2 <span style={{color: "#a7a7a7"}}>Retweets</span></span>
-                        <span className="tweet-likes" >20 <span style={{color: "#a7a7a7"}}>Likes</span></span>
+                        <span >2 <span style={{color: "#9ca7b0"}}>Retweets</span></span>
+                        <span className="tweet-likes" >20 <span style={{color: "#9ca7b0"}}>Likes</span></span>
                     </div>
                 </div>
                 <div className="tweet-controls">
-                    <BiMessageRounded/>
-                    <AiOutlineRetweet/>
-                    <AiOutlineHeart/>
-                    <FiShare/>
+                    <button><BiMessageRounded/></button>
+                    <button><AiOutlineRetweet/></button>
+                    <button><AiOutlineHeart/></button>
+                    <button><FiShare/></button>
                 </div>
             </div>
             {/* <div style={{ display: "flex", marginTop: "10px" }} >
@@ -77,9 +78,9 @@ export default function ExpandedTweet() {
             </div> */}
 
 
-
-            
-            {replies.map((t)=>(<TweetBlock tweet={t}/>))}
+            <div className="replies-container">
+                {replies.map((t)=>(<TweetBlock tweet={t}/>))}
+            </div>
         </div>
     )
 }
