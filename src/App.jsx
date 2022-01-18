@@ -42,7 +42,7 @@ function App(props) {
                 <Routes>
                   <Route exact path="/tweet/:id" element={<ExpandedTweet />} />
                   <Route exact path="/home" element={<Home />} />
-                  <Route exact path="/profile" element={<UserProfile />} />
+                  <Route exact path="/profile/:id" element={<UserProfile />} />
                   <Route exact path="/profile/tweetblock" element={<TweetBlock />} />
                   <Route exact path="/profile/followers" element={<Followers />} />
                   <Route exact path="/profile/following" element={<Following />} />

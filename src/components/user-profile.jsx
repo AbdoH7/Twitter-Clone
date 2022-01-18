@@ -16,19 +16,21 @@ function UserProfile({ }) {
   const toggleTab = (index) => {
     setToggleState(index);
   };
- 
+
 
   useEffect(() => {
     axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/Profile/', profile.id).then(res => {
       console.log(res.data)
       const data = res.data
-            data.map((d) => setTweets(tweets => [...tweets, {
-                id: d.id,
-                handle: d.username,
-                user: d.name,
-                content: d.text,
-                date: d.timestamp
-            }]))
+      data?.map((d) => setTweets(tweets => [...tweets, {
+        id: d.tweet.id,
+        handle: d.tweet.userId,
+        user: d.tweet.name,
+        content: d.tweet.text,
+        date: d.tweet.timestamp,
+        name: d.user.name,
+        avatar: d.user.avatar
+      }]))
 
     })
 
@@ -40,7 +42,7 @@ function UserProfile({ }) {
 
 
 
-  
+
 
   return (
     <div

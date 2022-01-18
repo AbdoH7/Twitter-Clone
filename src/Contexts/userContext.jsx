@@ -4,6 +4,7 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 const default_ = {
+  id:"0",
   Name: "loading..",
   handle: "loading...",
   tweetsNo: "...",

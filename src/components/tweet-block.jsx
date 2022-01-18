@@ -131,8 +131,8 @@ function TweetBlock(props) {
 
 
             <div style={{ display: "flex", marginTop: "10px" }} >
-                <img src={profile.ProfilePic} className="rounded-circle" style={{ width: "53px", height: "53px", margin: "5px" }} />
-                <h6 style={{ margin: "5px", fontWeight: "bolder" }}>{props.tweet.user}</h6>
+                <img src={props.tweet.avatar} className="rounded-circle" style={{ width: "53px", height: "53px", margin: "5px" }} />
+                <h6 style={{ margin: "5px", fontWeight: "bolder" }}>{props.tweet.name}</h6>
                 <h6 style={{ marginTop: "5px", color: "gray" }}>@{props.tweet.handle}</h6>
                 <h6 style={{ marginLeft: "15px", marginTop: "5px", color: "gray" }}>{props.tweet.date}</h6>
                 <button style={{ border: "none", height: "16px", width: "16px" }} onClick={moreClicked}> <BsThreeDots style={{ marginLeft: "50px", color: "white" }}></BsThreeDots> </button>
