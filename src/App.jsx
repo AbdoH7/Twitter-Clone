@@ -23,7 +23,7 @@ function App(props) {
         <UserProvider>
           <div style={{ width: "400px" }}> <SideNavbar style={{overflow:"hidden"}} /> </div>
 
-          <div style={{ width: "600px",overflow:"hidden", zIndex: "9" }}>
+          <div style={{ width: "600px",overflow:"hidden", zIndex: "9", backgroundColor:"#15202B" }}>
             <Routes>
               <Route exact path="/tweet/:id" element={<ExpandedTweet />}/>
               
@@ -35,7 +35,7 @@ function App(props) {
             </Routes>
           </div>
 
-          <rightside style={{ zIndex: "9", width: "519px" }} />
+          <rightside style={{ zIndex: "9", width: "519px", backgroundColor:"#15202B" }} />
         </UserProvider>
       </div>
     </BrowserRouter>
