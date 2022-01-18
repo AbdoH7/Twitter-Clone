@@ -2,8 +2,11 @@ import React from 'react'
 import {Form,Button} from 'react-bootstrap'
 import { useState } from 'react'
 import '../../styles/loginPage.css'
+import { UserContext } from '../../Contexts/userContext';
+import { useContext } from 'react';
 import { getAuth, createUserWithEmailAndPassword,updateProfile,connectAuthEmulator } from "firebase/auth";
 const auth = getAuth()
+
 //connectAuthEmulator(auth, "http://localhost:9099"); //for testing with emulators
 const axios = require('axios').default
 const SignUpForm = () => {
@@ -15,7 +18,7 @@ const SignUpForm = () => {
         birthdate:true,
     })
 
-
+    const [user, setUser] = useContext(UserContext);
     const checkValidity = (form) => {
         const email=form.email.value.length>5
         const password=form.password.value.length>7
@@ -71,8 +74,26 @@ const SignUpForm = () => {
         })
         .then((response)=> {
             //render to home or profile
-            console.log(response)
-            localStorage.setItem("context",response.data)
+            const data = response.data
+            console.log("response:"+ data.name)
+            const context = {
+                id:data.id,
+                Name:data.name,
+                handle:data.username,
+                tweetsNo: data.tweetsNo,
+                POB:"Alexandria, Egypt",
+                POB_Statue: true,
+                DOB: data.birthdate,
+                DOB_Statue: true,
+                DOJ: data.creationDate,
+                ProfilePic: 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/default-avatar.png?alt=media&token=7cb1d4bd-3672-4e2f-ae18-9d2fadb7c0a8',
+                CoverPic: 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/defCover.jpeg?alt=media&token=c1f0ccdb-dd31-41b0-9b12-c09a7f5c2a25',
+                followersNO:data.followers,
+                followingNO: data.following,
+                isLogged:true
+            }
+            localStorage.setItem('context',JSON.stringify(context))
+            setUser(context)
 
         })
         .catch((error) => {

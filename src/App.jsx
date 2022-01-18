@@ -24,8 +24,10 @@ function App(props) {
   onAuthStateChanged(auth, (user) => {
     
     if (user) {
+      console.log('logged in...')
       setStatus(true)
     } else {
+      console.log('logged out...')
       setStatus(false)
     }
   });
