@@ -1,56 +1,38 @@
-import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../Images/loginBg.png'
-import { useState } from 'react';
 import SignInForm from './signInForm';
+import SignUpForm from './signUpForm';
 import '../styles/loginPage.css'
-import {twitter} from '../scripts/icons'
-const NewloginPage = () => {
+import { BsTwitter } from "react-icons/bs";
+import Popup from 'reactjs-popup';
 
-    const renderSignUp = () => {
-        setLogin(false)
-    }
-    const renderSignIn = () => {
-        setLogin(true)
-    }
+const NewloginPage = (props) => {
 
-    const [login,setLogin] = useState(true)
     return (
+            
         <div className="page">
-            <img src ={image}/> 
+            <img src ={image}/>
             <div className="portal">
-                <div id="logo">{twitter}</div>
+                <BsTwitter style={{color:"#1da1f2",width:"100px",height:"100px"}}/>
                 <h1>Happening now</h1>
                 <h2>Join Twitter today.</h2>
-                <button className="gBtn">Sign In</button>
+                <Popup trigger= {<button className="btn-outline-light rounded-pill gBtn  ">Sign Up</button>} position="left center">
+                    <SignUpForm/>
+                </Popup>
                 <h6>Already have an account?</h6>
-                <button className= "gBtn">Sign Up</button>
+                <Popup trigger={<button className= " btn-outline-light rounded-pill gBtn">Sign In</button>} position="left center">
+                    <SignInForm />
+                </Popup>
+                
             </div>
+            
+            
         </div>
        
     )
 
 }
 
-
-
-
-const pageStyle = {
-    display:"flex",
-    width:"100vw",
-    height:"100vh",
-}
-
-const imageStyle = {
-    width:"50vw",
-    height:"100vh"
-}
-
-const portalStyle ={
-    backgroundColor:"white",
-    width:"50vw",
-    height:"100vh"
-}
 
 
 export default NewloginPage

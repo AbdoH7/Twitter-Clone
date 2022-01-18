@@ -5,8 +5,6 @@ import UserProfile from './../components/user-profile';
 
 
 
-
-
 export const UserContext = createContext();
 
 
@@ -23,7 +21,8 @@ export const UserProvider = props =>{
         ProfilePic: Ppic,
         CoverPic: Cpic,
         followersNO:300,
-        followingNO: 200
+        followingNO: 200,
+        isLogged:false
       });
       return(
         <UserContext.Provider value={[user,setUser]}>

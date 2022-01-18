@@ -1,6 +1,7 @@
 import React from 'react'
 import {Form,Button} from 'react-bootstrap'
 import { useState } from 'react'
+import '../styles/loginPage.css'
 import { getAuth, createUserWithEmailAndPassword,updateProfile,connectAuthEmulator } from "firebase/auth";
 const auth = getAuth()
 //connectAuthEmulator(auth, "http://localhost:9099"); //for testing with emulators
@@ -83,7 +84,7 @@ const SignUpForm = () => {
 
     };
     return (
-        <Form noValidate  onSubmit={handleSubmit}>
+        <Form noValidate  className="form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3 " controlId="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control required isInvalid={!inputsChecker.email} type="text" placeholder="Email"/>
@@ -108,7 +109,7 @@ const SignUpForm = () => {
             </Form.Group>
             
             <div style={btnContainer}>
-                <Button id="twitterBtn" variant="primary" type="submit" style={{width:"30%"}}>Sign Up</Button>
+                <button className="btn-outline-light rounded-pill gBtn"  type="submit">Sign Up</button>
             </div>
         </Form>
     )

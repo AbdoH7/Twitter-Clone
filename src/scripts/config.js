@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app";
 const axios = require('axios').default
 axios.defaults.baseURL = 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App';
-axios.defaults.headers['Access-Control-Allow-Origin'] = null
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
