@@ -2,8 +2,8 @@
 
 
 const hide = (event) => {
-    event.target.style.display = "none"
-    window.history.back()
+  //  event.target.style.display = "none"
+  //  window.history.back()
 }
 
 const Shadow = (props) => {

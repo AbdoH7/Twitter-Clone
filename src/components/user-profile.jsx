@@ -11,25 +11,26 @@ import { useEffect } from "react";
 function UserProfile({ }) {
   const [profile, setProfile] = useContext(UserContext);
   const [toggleState, setToggleState] = useState(1);
-  const [tweets, setTweets] = useState([{ id: 1, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "just setting up my twitter", date: "Nov 25, 2021" },
-  { id: 2, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "welcome everyone", date: "Nov 25, 2021" }])
+  const [tweets, setTweets] = useState([])
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
 
   useEffect(() => {
-    axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/Profile/', profile.id).then(res => {
+    axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/profile/'+profile.id).then(res => {
       console.log(res.data)
       const data = res.data
       data?.map((d) => setTweets(tweets => [...tweets, {
-        id: d.tweet.id,
-        handle: d.tweet.userId,
-        user: d.tweet.name,
+        
+        id:d.tweet.id,
         content: d.tweet.text,
         date: d.tweet.timestamp,
+        likesCount: d.tweet.likesCount,
+        avatar: d.user.avatar,
         name: d.user.name,
-        avatar: d.user.avatar
+        handle: d.user.username
+        
       }]))
 
     })

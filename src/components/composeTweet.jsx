@@ -17,7 +17,7 @@ export default function ComposeTweet() {
 
         var bodyFormData = new FormData()
         bodyFormData.append('text', text)
-        bodyFormData.append('userId', user.handle)
+        bodyFormData.append('userId', user.id)
         bodyFormData.append('hasMedia', false)
         bodyFormData.append('mediaType', 4)
         bodyFormData.append('hasMention', false)

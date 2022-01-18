@@ -72,6 +72,8 @@ const SignUpForm = () => {
         .then((response)=> {
             //render to home or profile
             console.log(response)
+            localStorage.setItem("context",response.data)
+
         })
         .catch((error) => {
             const errorCode = error.code;

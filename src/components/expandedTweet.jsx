@@ -133,18 +133,20 @@ export default function ExpandedTweet() {
     
     const [tweet1, setTweet] = useState({id:"",handle:"",user:"",content:"",date:""})
     useEffect(() => {
-        axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/tweet/'+id).then(res => {
-            const data = res.data.tweetData
+        axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/tweet/'+id+'/'+profile.id).then(res => {
+            const data = res.data
             const replies = res.data.replies
 
             console.log(replies)
             setTweet({
-                id: data.id,
-                handle: data.userId,
-                user: data.name,
-                content: data.text,
-                date: data.timestamp,
-                likesCount:data.likesCount,
+                id: data.tweet.id,
+                user: data.tweet.name,
+                content: data.tweet.text,
+                date: data.tweet.timestamp,
+                likesCount:data.tweet.likesCount,
+                avatar: data.user.avatar,
+                name:data.user.name,
+                handle:data.user.username
             })
 
             replies?.map((d) => setReplies(replies => [...replies, {
@@ -170,9 +172,9 @@ export default function ExpandedTweet() {
                 <div className="tweet-content">
                     <div className="tweet-header">
                         <div className="tweet-user-info">
-                            <div className="avatar"></div>
+                            <div style={{backgroundImage: `url(${tweet1.avatar})`}} className="avatar"></div>
                             <div className="user-info">
-                                <p className="name">{tweet1.user}</p>
+                                <p className="name">{tweet1.name}</p>
                                 <p className="user-name">@{tweet1.handle}</p>
                             </div>
                         </div>
