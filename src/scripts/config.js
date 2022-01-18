@@ -1,19 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 const axios = require('axios').default
+const fs = require('fs')
 axios.defaults.baseURL = 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBdzSAEJIECvootrkcs_GghICqDKrTA9T4",
-  authDomain: "twitterclonewebengineering.firebaseapp.com",
-  projectId: "twitterclonewebengineering",
-  storageBucket: "twitterclonewebengineering.appspot.com",
-  messagingSenderId: "94639386575",
-  appId: "1:94639386575:web:f1f3ed8ca3eac320092cba",
-  measurementId: "G-7VMLEL7PBQ"
-};
-
+const firebaseConfig = JSON.parse(fs.readFileSync('./config.json').toString())
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
