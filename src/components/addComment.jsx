@@ -1,10 +1,40 @@
 import React from 'react'
 import Ppic from "../Images/1.JPG";
+import axios from 'axios';
+import { UserContext } from '../Contexts/userContext';
+import { useContext } from 'react';
 
 
 export default function AddComment(props) {
+    const [user,setUser] = useContext(UserContext)
     const addReply = () => {
-        props.setReply(false)
+        
+
+            var text = document.getElementById("tweetText").value
+            document.getElementById("tweetText").value=""
+    
+            var bodyFormData = new FormData()
+            bodyFormData.append('text', text)
+            bodyFormData.append('userId', user.handle)
+            bodyFormData.append('hasMedia', false)
+            bodyFormData.append('mediaType', 4)
+            bodyFormData.append('hasMention', false)
+            bodyFormData.append('location', 'string')
+            bodyFormData.append('timestamp', new Date().toUTCString())
+    
+    
+            axios({
+                        method: "post",
+                        url: 'https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/reply/'+props.tweet.id,
+                        data: bodyFormData,
+                        headers:{"Content-Type": "multipart/form-data"}
+                    }).then(function (res){
+                        console.log(res)
+                    }).catch(function name(err) {
+                        console.log(err)            
+                    })
+                 
+        
     }
     return (
         <div style={styles.container}>
@@ -26,7 +56,7 @@ export default function AddComment(props) {
             
             <div>
                 <h6 className="secFont">Replying to @{props.tweet.handle}</h6>
-                <textarea rows="4" cols="65">
+                <textarea id='tweetText' rows="4" cols="65">
 
                 </textarea>
                 <br />

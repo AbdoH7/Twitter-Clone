@@ -4,19 +4,48 @@ import { UserContext } from "../Contexts/userContext";
 import TweetBlock from "./tweet-block";
 import { MdConstruction } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
+import Ppic from "../Images/1.JPG";
+import axios from "axios";
+import { useEffect } from "react";
 
-function UserProfile({}) {
+function UserProfile({ }) {
   const [profile, setProfile] = useContext(UserContext);
   const [toggleState, setToggleState] = useState(1);
-  const tweet = [{ id: 1, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "just setting up my twitter", date: "Nov 25, 2021" },
-  { id: 2, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "welcome everyone", date: "Nov 25, 2021" }]
+  const [tweets, setTweets] = useState([{ id: 1, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "just setting up my twitter", date: "Nov 25, 2021" },
+  { id: 2, user: "Abdulrahman Hussein", handle: "Abdulrahman", content: "welcome everyone", date: "Nov 25, 2021" }])
   const toggleTab = (index) => {
     setToggleState(index);
   };
+ 
+
+  useEffect(() => {
+    axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/Profile', profile.id).then(res => {
+      console.log(res.data)
+      const data = res.data
+            data.map((d) => setTweets(tweets => [...tweets, {
+                id: d.id,
+                handle: d.username,
+                user: d.name,
+                content: d.text,
+                date: d.timestamp
+            }]))
+
+    })
+
+  }, [])
+  // console.log(profile)
+
+
+
+
+
+
+  
+
   return (
     <div
-    //  className="main_container"
-     style={{ zIndex: "10" }}>
+      //  className="main_container"
+      style={{ zIndex: "10" }}>
       <div style={{ border: "1px solid #676F76" }}>
         <AiOutlineArrowLeft
           style={{ width: "75px", fontSize: "20px", marginTop: "20px" }}
@@ -66,17 +95,17 @@ function UserProfile({}) {
         <div className="container" style={{ display: "flex" }}>
           <NavLink to="/profile/followers" style={{ textDecoration: 'none' }}>
             {" "}
-            <h6 style={{ marginRight: "20px", color:"white" }}>
+            <h6 style={{ marginRight: "20px", color: "white" }}>
               {profile.followersNO}{" "}
               <h6 className="secFont" style={{ display: "inline-block" }}>
                 Followers
               </h6>
             </h6>{" "}
           </NavLink>
-          
+
 
           <NavLink to="/profile/following" style={{ textDecoration: 'none' }}>
-            <h6 style={{color:"white"}}>
+            <h6 style={{ color: "white" }}>
               {profile.followingNO}{" "}
               <h6 className="secFont" style={{ display: "inline-block" }}>
                 Following
@@ -135,10 +164,10 @@ function UserProfile({}) {
           style={{ width: "100%" }}
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          
-          {tweet.map((t)=>(<TweetBlock tweet={t}/>))}
-          
-          
+
+          {tweets.map((t) => (<TweetBlock tweet={t} />))}
+
+
         </div>
         <h1
           className={toggleState === 2 ? "content  active-content" : "content"}
