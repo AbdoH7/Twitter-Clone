@@ -33,6 +33,11 @@
     margin-top: 5%;
 
 }
+.portal > nav > * {
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
 h1{width: 70%;}
 
 .gBtn{

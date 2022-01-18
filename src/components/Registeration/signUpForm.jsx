@@ -1,7 +1,7 @@
 import React from 'react'
 import {Form,Button} from 'react-bootstrap'
 import { useState } from 'react'
-import '../styles/loginPage.css'
+import '../../styles/loginPage.css'
 import { getAuth, createUserWithEmailAndPassword,updateProfile,connectAuthEmulator } from "firebase/auth";
 const auth = getAuth()
 //connectAuthEmulator(auth, "http://localhost:9099"); //for testing with emulators
@@ -84,7 +84,7 @@ const SignUpForm = () => {
 
     };
     return (
-        <Form noValidate  className="form" onSubmit={handleSubmit}>
+        <Form noValidate style={{borderRadius:"4%"}} className="form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3 " controlId="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control required isInvalid={!inputsChecker.email} type="text" placeholder="Email"/>

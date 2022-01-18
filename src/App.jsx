@@ -8,9 +8,9 @@ import TweetBlock from "./components/tweet-block";
 import Followers from "./components/followers";
 import Following from "./components/following";
 import ExpandedTweet from "./components/expandedTweet";
-import NewloginPage from "./components/NewloginPage";
+import NewloginPage from "./components/Registeration/NewloginPage";
 import Home from './components/home'
-import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const auth = getAuth();
 
@@ -33,8 +33,9 @@ function App(props) {
   return (
     <BrowserRouter>
       <div className="App">
-
+        
         <UserProvider>
+           
           {status ?
             <><div style={{ width: "400px" }}> <SideNavbar /> </div>
 

@@ -1,11 +1,11 @@
 import React from 'react'
-import '../styles/loginPage.css'
-import { UserContext } from "../Contexts/userContext";
+import '../../styles/loginPage.css'
+import { UserContext } from "../../Contexts/userContext";
 import { useContext } from 'react';
-import { Form ,Button} from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 import {getAuth,signInWithEmailAndPassword} from "firebase/auth"
-import zIndex from '@mui/material/styles/zIndex'
-import { positions } from '@mui/system'
+
+ 
 const auth = getAuth()
 const axios = require('axios').default
 
@@ -13,6 +13,7 @@ const SignInForm = (props) => {
     
     const [user, setUser] = useContext(UserContext);
     const handleSubmit = (event) => {  
+        console.log("skfsjbduhjkrwgfefebnuwdj")
         event.preventDefault();
         const form = event.target;
         
@@ -24,7 +25,7 @@ const SignInForm = (props) => {
         form.password.value = ""
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in 
+            console.log("Signed In")
             const user = userCredential.user;
             return auth.currentUser.getIdToken(false)
 
@@ -44,19 +45,7 @@ const SignInForm = (props) => {
             const data = response.data
             console.log("response:"+ data.name)
             setUser({
-                Name:data.name,
-                handle:data.username,
-                tweetsNo: data.tweetsNo,
-                POB:"Alexandria, Egypt",
-                POB_Statue: true,
-                DOB: data.birthdate,
-                DOB_Statue: true,
-                DOJ: data.creationDate,
-                ProfilePic: data.avatar || 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/default-avatar.png?alt=media&token=7cb1d4bd-3672-4e2f-ae18-9d2fadb7c0a8',
-                CoverPic: data.coverPhoto || 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/defCover.jpeg?alt=media&token=c1f0ccdb-dd31-41b0-9b12-c09a7f5c2a25',
-                followersNO:data.followers,
-                followingNO: data.following,
-                isLogged:true
+                
             })
             
         
@@ -66,7 +55,7 @@ const SignInForm = (props) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            alert(errorMessage)
+            alert(error.stack)
         });
 
     
@@ -79,8 +68,7 @@ const SignInForm = (props) => {
 
     
 
-    return (
-        <div >                           
+    return (                          
             <Form noValidate style={{borderRadius:"4%"}} className="form" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3 " controlId="email">
                     <Form.Label>Email</Form.Label>
@@ -98,7 +86,6 @@ const SignInForm = (props) => {
                     <button className="btn-outline-light rounded-pill gBtn" type="submit" >Sign In</button>
                 </div>
             </Form> 
-        </div> 
     )
 }
 
