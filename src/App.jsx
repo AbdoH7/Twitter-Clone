@@ -41,7 +41,7 @@ function App(props) {
               <div style={{ width: "625x", zIndex: "9" }}>
                 <Routes>
                   <Route exact path="/tweet/:id" element={<ExpandedTweet />} />
-
+                  <Route exact path="/home" element={<Home />} />
                   <Route exact path="/profile" element={<UserProfile />} />
                   <Route exact path="/profile/tweetblock" element={<TweetBlock />} />
                   <Route exact path="/profile/followers" element={<Followers />} />

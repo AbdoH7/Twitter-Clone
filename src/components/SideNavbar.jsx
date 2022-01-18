@@ -6,6 +6,9 @@ import { home, explore, twitter, notifications, messages, bookmarks, lists, prof
 import { getAuth, signOut } from "firebase/auth";
 import {MdLogout} from 'react-icons/md'
 import { width } from "@mui/system";
+import Popup from "reactjs-popup";
+
+import ComposeTweet from './composeTweet';
 
 
 const auth = getAuth()
@@ -29,7 +32,7 @@ function SideNavbar ({}) {
         <header>{twitter}</header>
 
         <nav>
-          <NavLink to="/" activeClassName="selected">
+          <NavLink to="/home" activeClassName="selected">
             <span>{home} Home</span>
           </NavLink>
           <NavLink to="/explore" activeClassName="selected">
@@ -47,7 +50,7 @@ function SideNavbar ({}) {
           <NavLink to="/lists" activeClassName="selected">
             <span>{lists} Lists</span>
           </NavLink>
-          <NavLink to="/profile" activeClassName="selected">
+          <NavLink to={`/profile/${aaaah.id}`} activeClassName="selected">
             <span>{profile} Profile</span>
           </NavLink>
           <button className="more">
@@ -55,7 +58,17 @@ function SideNavbar ({}) {
           </button>
         </nav>
 
-        <button className="tweet">Tweet</button>
+
+        <Popup
+                    
+                    trigger={<button className="tweet">Tweet</button>}
+                    modal
+                    contentStyle={{width:"600px", margin:"auto"}}
+                    
+                >
+                   <ComposeTweet/>
+                </Popup >
+        
 
         <footer>
           <button className="account">

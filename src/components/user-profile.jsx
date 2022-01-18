@@ -19,7 +19,7 @@ function UserProfile({ }) {
  
 
   useEffect(() => {
-    axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/Profile', profile.id).then(res => {
+    axios.get('https://us-central1-twitterclonewebengineering.cloudfunctions.net/App/Profile/', profile.id).then(res => {
       console.log(res.data)
       const data = res.data
             data.map((d) => setTweets(tweets => [...tweets, {
