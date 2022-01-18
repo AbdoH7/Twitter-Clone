@@ -10,17 +10,32 @@ import Following from "./components/following";
 import ExpandedTweet from "./components/expandedTweet";
 import NewloginPage from "./components/NewloginPage";
 import Home from './components/home'
-import { UserContext } from "./Contexts/userContext";
-import { useContext } from "react";
-function App(props) {
+import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 
-  const [user,setUser] = useContext(UserContext)
+const auth = getAuth();
+
+
+
+function App(props) {
+  
+  const [status,setStatus] = useState(window.localStorage.getItem('username') ? true : false)
+
+  
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user)
+      setStatus(true)
+    } else {
+      setStatus(false)
+    }
+  });
+
   return (
     <BrowserRouter>
       <div className="App">
 
         <UserProvider>
-          {user.isLogged ?
+          {status ?
             <><div style={{ width: "400px" }}> <SideNavbar /> </div>
 
               <div style={{ width: "625x", zIndex: "9" }}>

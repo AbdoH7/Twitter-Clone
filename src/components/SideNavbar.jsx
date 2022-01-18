@@ -3,6 +3,22 @@ import { UserContext } from "../Contexts/userContext";
 import '../styles/SideNavbar.css'
 import { NavLink } from 'react-router-dom'
 import { home, explore, twitter, notifications, messages, bookmarks, lists, profile, more } from '../scripts/icons'
+import { getAuth, signOut } from "firebase/auth";
+import {MdLogout} from 'react-icons/md'
+import { width } from "@mui/system";
+
+
+const auth = getAuth()
+const signOut_ = (event) => {
+  event.preventDefault();
+  signOut(auth).then(() => {
+    window.localStorage.setItem('token',undefined)
+    window.localStorage.setItem('username',undefined)
+    console.log('Signed out successfully')
+  }).catch((error) => {
+    console.log(error.stack,error.message)
+  });
+}
 
 function SideNavbar ({}) {
 
@@ -53,6 +69,7 @@ function SideNavbar ({}) {
               <div className="username">@{aaaah.handle}</div>
             </div>
           </button>
+          <a onClick={signOut_} style={{color:"white"}}href="/"><MdLogout style={{width:"25px",height:"25px"}}/></a>
         </footer>
       </div>
     </div>

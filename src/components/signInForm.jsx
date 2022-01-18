@@ -52,8 +52,8 @@ const SignInForm = (props) => {
                 DOB: data.birthdate,
                 DOB_Statue: true,
                 DOJ: data.creationDate,
-                ProfilePic: data.avatar,
-                CoverPic: data.coverPhoto,
+                ProfilePic: data.avatar || 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/default-avatar.png?alt=media&token=7cb1d4bd-3672-4e2f-ae18-9d2fadb7c0a8',
+                CoverPic: data.coverPhoto || 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/defCover.jpeg?alt=media&token=c1f0ccdb-dd31-41b0-9b12-c09a7f5c2a25',
                 followersNO:data.followers,
                 followingNO: data.following,
                 isLogged:true
