@@ -23,7 +23,6 @@ function App(props) {
   
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user)
       setStatus(true)
     } else {
       setStatus(false)

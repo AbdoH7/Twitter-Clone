@@ -9,11 +9,10 @@ import {getAuth,signInWithEmailAndPassword} from "firebase/auth"
 const auth = getAuth()
 const axios = require('axios').default
 
-const SignInForm = (props) => {
+const SignInForm = () => {
     
     const [user, setUser] = useContext(UserContext);
     const handleSubmit = (event) => {  
-        console.log("skfsjbduhjkrwgfefebnuwdj")
         event.preventDefault();
         const form = event.target;
         
@@ -42,11 +41,26 @@ const SignInForm = (props) => {
             
         })
         .then((response)=> {
+
             const data = response.data
             console.log("response:"+ data.name)
-            setUser({
-                
-            })
+            const context = {
+                Name:data.name,
+                handle:data.username,
+                tweetsNo: data.tweetsNo,
+                POB:"Alexandria, Egypt",
+                POB_Statue: true,
+                DOB: data.birthdate,
+                DOB_Statue: true,
+                DOJ: data.creationDate,
+                ProfilePic: data.avatar || 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/default-avatar.png?alt=media&token=7cb1d4bd-3672-4e2f-ae18-9d2fadb7c0a8',
+                CoverPic: data.coverPhoto || 'https://firebasestorage.googleapis.com/v0/b/twitterclonewebengineering.appspot.com/o/defCover.jpeg?alt=media&token=c1f0ccdb-dd31-41b0-9b12-c09a7f5c2a25',
+                followersNO:data.followers,
+                followingNO: data.following,
+                isLogged:true
+            }
+            localStorage.setItem('context',JSON.stringify(context))
+            setUser(context)
             
         
             // user object in response.data

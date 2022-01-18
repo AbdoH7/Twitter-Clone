@@ -64,7 +64,7 @@ function SideNavbar ({}) {
                 src={aaaah.ProfilePic}
               />
             </div>
-            <div style={{marginLeft:"-25px"}}>
+            <div >
               <div className="name">{aaaah.Name}</div>
               <div className="username">@{aaaah.handle}</div>
             </div>
