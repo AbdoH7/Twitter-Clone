@@ -14,7 +14,7 @@ export default function Home() {
             console.log(res)
             data?.map((d) => setTweets(tweets => [...tweets, {
                 id: d.tweet.id,
-                handle: d.tweet.userId,
+                handle: d.user.username,
                 user: d.tweet.name,
                 content: d.tweet.text,
                 date: d.tweet.timestamp,
